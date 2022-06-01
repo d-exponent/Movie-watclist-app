@@ -1,3 +1,6 @@
+import apiKey from "/apiKey.js"
+
+
 import {
   setQueryCardHtml,
   setMovieCardHtml,
@@ -7,6 +10,7 @@ import {
   watclistPageCtaBtnManager,
   getMovies,
 } from "/utils.js";
+
 
 let duplicateIdArray = [];
 let localStorageArray = [];
@@ -68,7 +72,7 @@ if (page === "Watchlist") {
     const userQuery = inputEl.value
     form.reset();
 
-    getMovies(`https://www.omdbapi.com/?s=${userQuery}&apikey=a118e62d`)
+    getMovies(`https://www.omdbapi.com/?s=${userQuery}&apikey=${apiKey}`)
       .then((data) => {
         // Control flow for number of reponse object array to be processed
         if (data.Search) {

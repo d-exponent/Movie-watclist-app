@@ -1,3 +1,5 @@
+import apiKey from "/apiKey.js"
+
 async function getMovies(url) {
   const res = await fetch(url);
   if (!res.ok) {
@@ -117,7 +119,7 @@ function render(
 
   // Iterate and fetch movie info from queryIDarr omdbID elements
   for (const movieId of queryIdArr) {
-    const url = `https://www.omdbapi.com/?i=${movieId}&apikey=a118e62d&short`;
+    const url = `https://www.omdbapi.com/?i=${movieId}&apikey=${apiKey}&short`;
     getMovies(url)
       .then((data) => {
         queryObjArr.unshift(data);
