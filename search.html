@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Movie List</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/b4c4e230f8.js" crossorigin="anonymous"></script>
+</head>
+
+<body id="search" class="bg-accent">
+
+    <header class="bg-dark pd flex">
+        <nav class="flex w-100">
+            <h1 class="search-header">Find your film</h1>
+            <a href="index.html">My Watchlist</a>
+        </nav>
+        <form id="form" class="search-bar pd w-100" action="">
+            <div class="flex bg-accent w-100">
+                <i class="fa fa-search"></i>
+                <input class=" bg-accent w-100" id="inputEl" name="filmTitle" type="text" placeholder="Movie Title">
+            </div>
+            <button type="submit">Search</button>
+        </form>
+        <button id="clear-btn">Clear</button>
+    </header>
+
+
+
+
+    <section class="film">
+        <main class="movie-container watchlist" id="movie-container">
+            <div class="placeholder-wrap" id="placeholder-logo">
+                <i class="fa-solid fa-film"></i>
+                <p>Start exploring</p>
+            </div>
+
+        </main>
+
+        <ul class="search-list" id="movie-list">
+
+        </ul>
+    </section>
+
+
+
+    <script src="script.js" type="module"></script>
+</body>
+
+</html>
