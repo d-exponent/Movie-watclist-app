@@ -14,6 +14,7 @@ let duplicateIdArray = []
 let localStorageArray = []
 let movieElementCount = 1
 let renderArray = []
+let clearBtnFeature
 
 const page = document.body.id
 const queryListContainer = document.getElementById("movie-list")
@@ -63,11 +64,20 @@ if (page === "Watchlist") {
   })
 
   // Clear local storage, clear render Array and reload page
-  document.getElementById("clear-btn").addEventListener("dblclick", () => {
-    sessionStorage.clear()
-    renderArray = []
-    location.reload()
+  document.getElementById("clear-btn").addEventListener("click", (e) => {
+    clearBtnFeature = true
+    e.target.textContent = "Click to confirm!"
+
+    if(clearBtnFeature){
+      document.getElementById("clear-btn").addEventListener("click", ()=>{
+        sessionStorage.clear()
+        renderArray = []
+        location.reload()
+      })
+    }
+    
   })
+
 
   //Reset inputEl placeholder
   document.getElementById("inputEl").addEventListener("click", () => {

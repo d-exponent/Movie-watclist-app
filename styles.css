@@ -4,7 +4,6 @@ body {
     margin: 0 auto;
     color: #fff;
     position: relative;
-    box-shadow: 0 0 20px 2px #474747;
 }
 
 img {
@@ -22,7 +21,6 @@ Typography
 h1 {
     font-style: 700;
     font-size: 32.79px;
-    margin-bottom: 1rem;
 }
 
 .movie h2 {
@@ -58,7 +56,7 @@ span.rating {
 
 a {
     color: firebrick;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 700;
     text-decoration: none;
 }
@@ -74,47 +72,69 @@ a:hover {
 header {
     background: #8f8d8d;
     background-image: url("images/img.jpg");
-    background-repeat: no-repeat;
     background-size: cover;
     background-blend-mode: color-dodge;
-    height: 45vh;
+    height: 35vh;
     text-align: center;
     position: relative;
 }
 
 header nav {
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    grid-template-areas:
+        'nav-text nav-text'
+        'nav-button nav-button';
+    gap: 2em 0;
 }
 
-button#clear-btn{
-    background: transparent;
-    border: 1px solid;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-    padding: 1% 10%;
-    position: absolute;
-    bottom: 40px;
-    left: 50%;
-    transform: translateX(-50%);
+nav > button.clear-btn {
+    background: #fff;
+    opacity: 0.8;
+    width: 50%;
+    color: #3a3939;
+    border-radius: 5px;
+    grid-area: nav-button;
+    justify-self: center;
+    align-self: center;
 }
 
-@media(min-width: 400px) {
-    header nav .search-header {
-        margin-bottom: 0;
-    }
+nav > div.nav-text {
+    grid-area: nav-text;
+    display: grid;
+    grid-template-columns: auto;
+    gap: .6em;
+}
 
+@media(min-width: 500px) {
     header nav {
-        flex-direction: row;
-        justify-content: space-between;
+        gap: .2em 0;
     }
 
-    button#clear-btn{
-        padding: 1% 5%;
-        bottom: 70%;
-        left: 4.7%;
-        transform: translateX(-4.7%);
+    nav > div.nav-text {
+        grid-template-columns: auto auto;
+        align-items: center;
     }
+
+    nav > div.nav-text>a {
+        text-align: right;
+    }
+
+    nav > div.nav-text>h1 {
+        text-align: left;
+    }
+
+    nav > button.clear-btn {
+        width: fit-content;
+        justify-self: left;
+    }
+
+    nav > button.clear-btn:hover,
+    nav > button.clear-btn:focus {
+        opacity: 1;
+        background: #fff;
+    }
+
+
 }
 
 /* ****************************
@@ -351,7 +371,6 @@ span.sign {
         margin: 5px 0;
         display: flex;
         align-self: flex-end;
-
     }
 
     .top {
@@ -370,7 +389,6 @@ span.sign {
 /******************** 
 UI for Unordered List 
 *****************/
-
 .search-list {
     position: absolute;
     text-align: left;
@@ -415,7 +433,7 @@ UI for Unordered List
 }
 
 /* **********************
-MODIFIER
+MODIFIERS
 *************************/
 .bg-dark {
     background-color: #121212;
